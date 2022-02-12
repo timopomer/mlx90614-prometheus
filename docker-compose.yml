@@ -18,3 +18,4 @@ services:
       - monitoring
     volumes:
       - /sys:/sys
+      - /dev:/dev
