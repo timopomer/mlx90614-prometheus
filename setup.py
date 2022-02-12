@@ -24,6 +24,6 @@ setuptools.setup(
         'PyMLX90614==0.0.4'
     ],
     entry_points={
-        'console_scripts': ['collect-mlx90614=collect_data:main'],
+        'console_scripts': ['collect-mlx90614=collect_mlx90614.collect_data:main'],
     }
 )
