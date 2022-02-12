@@ -9,10 +9,14 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: .
-    image: ghcr.io/timopomer/mlx90614-prometheus:0.0.1
+    image: ghcr.io/timopomer/mlx90614-prometheus:0.0.2
     restart: always
     container_name: mlx90614-exporter
     ports:
       - "8000:8000"
     networks:
       - monitoring
+    volumes:
+      - /sys:/sys
+      - /dev:/dev
+    privileged: true
