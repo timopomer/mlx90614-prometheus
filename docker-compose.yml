@@ -1,0 +1,18 @@
+version: '3.8'
+
+networks:
+  monitoring:
+    driver: bridge
+
+services:
+  mlx90614-exporter:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    image: ghcr.io/timopomer/mlx90614-prometheus:0.0.1
+    restart: always
+    container_name: mlx90614-exporter
+    ports:
+      - "8000:8000"
+    networks:
+      - monitoring
