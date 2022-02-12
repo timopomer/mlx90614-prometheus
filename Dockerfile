@@ -9,3 +9,4 @@ RUN python -m build --sdist --wheel --outdir dist/ .
 FROM python:3.9
 COPY --from=builder /tmp/build/dist/mlx90614-prometheus-*.tar.gz /tmp/mlx90614-prometheus.tar.gz
 RUN pip install /tmp/mlx90614-prometheus.tar.gz && rm /tmp/mlx90614-prometheus.tar.gz
+ENTRYPOINT ["collect-mlx90614"]
