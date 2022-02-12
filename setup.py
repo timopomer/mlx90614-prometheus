@@ -19,6 +19,11 @@ setuptools.setup(
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.9",
     install_requires=[
-        'prometheus-client==0.13.1'
-    ]
+        'prometheus-client==0.13.1',
+        'smbus2==0.4.1',
+        'PyMLX90614==0.0.4'
+    ],
+    entry_points={
+        'console_scripts': ['collect-mlx90614=collect_data:main'],
+    }
 )
