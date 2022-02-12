@@ -9,7 +9,7 @@ services:
     build:
       dockerfile: ./Dockerfile
       context: .
-    image: https://ghcr.io/timopomer/mlx90614-prometheus:0.0.1
+    image: ghcr.io/timopomer/mlx90614-prometheus:0.0.1
     restart: always
     container_name: mlx90614-exporter
     ports:
