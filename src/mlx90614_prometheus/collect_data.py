@@ -3,7 +3,7 @@ from smbus2 import SMBus
 from mlx90614 import MLX90614
 import time
 
-g = Gauge('sensor_temp', 'Sensor temperature')
+g = Gauge('sensor_temp', 'Sensor temperature', ['probe'])
 
 
 def main():
@@ -14,8 +14,8 @@ def main():
     sensor = MLX90614(bus, address=0x5A)
 
     while True:
-        g.labels('probe', 'ambient').set(sensor.get_ambient())
-        g.labels('probe', 'object').set(sensor.get_object_1())
+        g.labels(probe='ambient').set(sensor.get_ambient())
+        g.labels(probe='object').set(sensor.get_object_1())
         time.sleep(1)
 
     bus.close()

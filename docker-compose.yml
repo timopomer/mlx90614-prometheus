@@ -19,3 +19,4 @@ services:
     volumes:
       - /sys:/sys
       - /dev:/dev
+    privileged: true
